@@ -1,0 +1,86 @@
+Menggunakan GitHub untuk proyek kelompok adalah keputusan yang sangat tepat. Ini akan mencegah kode tertukar, hilang, atau tertimpa saat kalian bekerja bersamaan.
+
+Berikut adalah panduan langkah demi langkah untuk memulai proyek kolaborasi di GitHub, dirancang khusus untuk tim kamu:
+
+### 1. Persiapan Awal (Dilakukan Semua Anggota)
+
+Sebelum mulai, pastikan ketiga anggota kelompok melakukan dua hal ini:
+
+1. **Buat Akun:** Daftar di [github.com](https://github.com).
+2. **Instal Git:** Unduh dan instal **Git** di laptop masing-masing dari [git-scm.com](https://git-scm.com). Saat instalasi, klik "Next" saja sampai selesai.
+
+---
+
+### 2. Langkah Pemimpin Kelompok (Anggota 1)
+
+Sebagai orang yang memulai proyek, lakukan langkah ini:
+
+1. **Buat Repository:** * Login ke GitHub, klik tombol **New** (atau ikon +).
+* Beri nama: `admin-surat-smkn2`.
+* Pilih **Public** (agar gratis) dan centang **Add a README file**.
+* Klik **Create repository**.
+
+
+2. **Undang Anggota Kelompok:**
+* Di halaman repository, klik menu **Settings** > **Collaborators**.
+* Klik **Add people**, lalu masukkan username GitHub kedua temanmu.
+* Temanmu harus membuka email mereka untuk **Accept Invitation**.
+
+
+
+---
+
+### 3. Menghubungkan Laptop ke GitHub
+
+Setelah semua terdaftar, kalian harus "mendownload" folder proyek tersebut ke laptop masing-masing:
+
+1. Buka folder `C:\xampp\htdocs` di laptop.
+2. Klik kanan di dalam folder tersebut (atau di area kosong), pilih **Open Git Bash here**.
+3. Ketik perintah ini (ganti `username-kamu` dengan username GitHub pemimpin):
+```bash
+git clone https://github.com/username-kamu/admin-surat-smkn2.git
+
+```
+
+
+4. Sekarang akan muncul folder baru bernama `admin-surat-smkn2` di dalam htdocs. Masuklah ke folder itu untuk mulai bekerja.
+
+---
+
+### 4. Siklus Kerja Harian (Sangat Penting!)
+
+Agar kode tidak berantakan, gunakan urutan kerja ini setiap kali ingin mulai coding:
+
+* **PAGI (Sebelum mulai):** Tarik kode terbaru dari temanmu agar kodemu selalu *update*.
+```bash
+git pull origin main
+
+```
+
+
+* **SIANG (Saat coding):** Kerjakan tugas masing-masing di folder tersebut menggunakan VS Code atau editor lain.
+* **SORE (Setelah selesai):** Simpan dan kirim hasil kerjamu ke GitHub.
+```bash
+git add .
+git commit -m "Selesai membuat form surat masuk"
+git push origin main
+
+```
+
+
+
+---
+
+### 5. Catatan Penting untuk Project PHP & MySQL
+
+Ada satu file rahasia yang wajib ada di folder proyek kalian, namanya **`.gitignore`**. File ini bertugas memberi tahu Git agar tidak mengupload file sampah atau file konfigurasi pribadi.
+
+Buat file baru di folder utama proyek dengan nama `.gitignore` (pastikan ada titik di depannya), lalu isi dengan:
+
+```text
+/vendor
+.env
+*.log
+
+```
+
