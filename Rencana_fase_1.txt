@@ -1,0 +1,57 @@
+Fase 1 adalah **Pondasi**. Jika diibaratkan membangun rumah, ini adalah tahap pembersihan lahan, pembuatan pondasi semen, dan penyediaan material. Tanpa Fase 1 yang kuat, coding di Fase 2 akan berantakan.
+
+Berikut adalah detail rencana **Fase 1 (Minggu 1)** untuk masing-masing anggota:
+
+---
+
+### 🛠️ Tugas Anggota 1: Backend & Git Lead (Persiapan Sistem)
+
+Kamu bertanggung jawab menyiapkan "rumah" digital tempat kalian bekerja.
+
+1. **Setup GitHub:** Membuat repository dan mengundang Anggota 2 & 3 sebagai kolaborator.
+2. **Struktur Folder:** Membuat folder proyek di `htdocs` dengan susunan yang rapi (`assets/`, `config/`, `includes/`, `modules/`, `uploads/`, `db/`).
+3. **File .gitignore:** Membuat file `.gitignore` agar file sampah tidak ikut terunggah.
+4. **Koneksi Database:** Membuat file `config/database.php` yang akan digunakan oleh semua fitur nantinya.
+5. **Push Awal:** Mengirim semua struktur folder kosong ini ke GitHub agar bisa di-`pull` oleh temanmu.
+
+### 🎨 Tugas Anggota 2: Frontend Developer (Persiapan Tampilan)
+
+Anggota 2 menyiapkan "alat rias" aplikasi agar tidak terlihat membosankan.
+
+1. **Instalasi Bootstrap:** Mengunduh file Bootstrap dan meletakkannya di folder `assets/css/` dan `assets/js/`.
+2. **Halaman Template:** Membuat file `includes/header.php` dan `includes/footer.php`. Ini gunanya supaya menu navigasi tidak perlu ditulis berulang-ulang di setiap halaman.
+3. **Layout Utama:** Membuat kerangka halaman `index.php` (halaman utama) yang sudah terhubung dengan Bootstrap.
+
+### 🗄️ Tugas Anggota 3: Database & Data (Persiapan Gudang)
+
+Anggota 3 memastikan "gudang" penyimpanan data siap menampung informasi.
+
+1. **Pembuatan Database:** Membuat database bernama `db_surat_smkn2` di phpMyAdmin.
+2. **Eksekusi SQL:** Membuat tabel-tabel utama (`users`, `surat_masuk`, `surat_keluar`, `ref_kategori`).
+3. **Input Referensi:** Memasukkan data awal ke tabel `ref_kategori` (misalnya: UND untuk Undangan, ST untuk Surat Tugas, dll) sesuai aturan sekolah.
+4. **Backup SQL:** Mengekspor hasil database tersebut menjadi file `.sql` dan menyimpannya di folder `db/` proyek agar bisa dipakai oleh Anggota 1 & 2.
+
+---
+
+### 🎯 Hasil Akhir Fase 1
+
+Di akhir Fase 1, proyek kalian harus sudah dalam kondisi:
+
+* ✅ Semua anggota tim sudah memiliki folder proyek yang sama di laptop masing-masing (hasil `git clone`).
+* ✅ Saat membuka `localhost/admin-surat-smkn2`, sudah muncul halaman kosong tapi sudah ada gaya Bootstrap-nya.
+* ✅ Database sudah siap di phpMyAdmin masing-masing anggota.
+
+---
+
+### Tabel Ringkasan Aktivitas Fase 1
+
+| Hari | Aktivitas | Penanggung Jawab |
+| --- | --- | --- |
+| **1-2** | Setup GitHub, Struktur Folder, & `.gitignore` | Anggota 1 |
+| **3-4** | Pembuatan Tabel Database & Input Kode Surat | Anggota 3 |
+| **5-6** | Setup Bootstrap & Template Header/Footer | Anggota 2 |
+| **7** | Tes Koneksi Database & Sinkronisasi GitHub terakhir | Semua |
+
+---
+
+> **Pesan untuk Kelompok:** Jangan mulai coding fitur (seperti membuat form input) sebelum Fase 1 ini selesai. Jika pondasinya sudah seragam, kerja kelompok akan jauh lebih cepat.

@@ -1,0 +1,23 @@
+4. Sekarang akan muncul folder baru bernama `admin-surat-smkn2` di dalam htdocs. Masuklah ke folder itu untuk mulai bekerja.
+
+---
+
+### 4. Siklus Kerja Harian (Sangat Penting!)
+
+Agar kode tidak berantakan, gunakan urutan kerja ini setiap kali ingin mulai coding:
+
+* **PAGI (Sebelum mulai):** Tarik kode terbaru dari temanmu agar kodemu selalu *update*.
+```bash
+[git pull origin main]
+
+```
+
+
+* **SIANG (Saat coding):** Kerjakan tugas masing-masing di folder tersebut menggunakan VS Code atau editor lain.
+* **SORE (Setelah selesai):** Simpan dan kirim hasil kerjamu ke GitHub.
+```bash
+[git add .]
+[git commit -m "contoh komentar laporan: Selesai membuat form surat masuk"]
+[git push origin main]
+
+```

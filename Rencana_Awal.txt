@@ -1,0 +1,91 @@
+Tentu, mari kita susun ulang rencana ini agar sangat jelas dan bisa langsung kamu bagi ke teman-teman kelompokmu. Kita akan menggunakan **PHP, MySQL, dan Bootstrap** sebagai fondasi utama karena ini adalah kombinasi paling stabil untuk aplikasi administrasi sekolah.
+
+---
+
+## 1. Visi Proyek: "E-Arsip SMKN 2 Padang"
+
+Tujuan kita adalah mengubah tumpukan kertas surat menjadi sistem digital yang rapi. Aplikasi ini tidak hanya menyimpan data, tapi **pintar** karena bisa membuat nomor surat secara otomatis sesuai aturan sekolah.
+
+### Aturan Emas Penomoran:
+
+Sistem akan otomatis menghasilkan: `[No Urut]/[Kode]/SMKN2-PDG/[Bulan Romawi]/[Tahun]`
+
+> Contoh: **005/UND/SMKN2-PDG/I/2026**
+
+---
+
+## 2. Pembagian Tugas Kelompok (3 Orang)
+
+Agar pekerjaan tidak tumpang tindih, berikut adalah pembagian peran yang paling efisien:
+
+### **Anggota 1: Backend Developer (Sang Logika)**
+
+**Fokus:** Menghubungkan database dengan tampilan dan membuat fungsi otomatisasi.
+
+* **Tugas Utama:**
+* Membuat koneksi database (PHP ke MySQL).
+* Membuat fitur Simpan, Edit, dan Hapus (CRUD) untuk Surat Masuk & Keluar.
+* **Tugas Spesial:** Membuat fungsi PHP untuk konversi bulan ke angka Romawi dan *counter* otomatis untuk nomor urut surat.
+
+
+
+### **Anggota 2: Frontend Developer (Sang Desainer)**
+
+**Fokus:** Membuat aplikasi terlihat profesional dan mudah digunakan oleh staf TU.
+
+* **Tugas Utama:**
+* Membuat kerangka halaman menggunakan HTML & Bootstrap.
+* Memastikan tampilan rapi di laptop maupun HP (Responsive).
+* **Tugas Spesial:** Membuat halaman "Dashboard" yang menampilkan ringkasan jumlah surat dalam bentuk angka atau grafik sederhana (menggunakan JavaScript).
+
+
+
+### **Anggota 3: Database & Documentation (Sang Pengatur Data)**
+
+**Fokus:** Menyiapkan gudang data dan memastikan aplikasi siap "dijual" (siap pakai).
+
+* **Tugas Utama:**
+* Merancang tabel di phpMyAdmin (MySQL).
+* Menginput data referensi (Daftar kode surat seperti UND, SK, surat tugas, dll).
+* **Tugas Spesial:** Melakukan pengujian (Testing) untuk mencari error dan menyusun laporan/panduan penggunaan aplikasi.
+
+
+
+---
+
+## 3. Tahapan Pengerjaan (Roadmap)
+
+### **Fase 1: Persiapan (Minggu 1)**
+
+* **Database:** Anggota 3 membuat database `db_surat` dengan tabel: `users`, `surat_masuk`, `surat_keluar`, dan `ref_kategori`.
+* **Setup Project:** Anggota 1 menyiapkan folder di `htdocs` dan Anggota 2 memasukkan file Bootstrap.
+
+### **Fase 2: Inti Aplikasi / MVP (Minggu 2)**
+
+* Fokus pada fitur **Surat Keluar**. Kenapa? Karena di sini aturan penomoran otomatis yang diminta gurumu berada.
+* Anggota 1 membuat form yang ketika disimpan, otomatis menghitung nomor urut dan mengambil bulan/tahun saat ini.
+
+### **Fase 3: Pelengkap (Minggu 3)**
+
+* Membuat fitur **Surat Masuk**. Fokusnya adalah pengunggahan file (PDF/Scan).
+* Membuat sistem **Login** sederhana agar data aman.
+
+### **Fase 4: Finalisasi & Layak Jual (Minggu 4)**
+
+* Fitur "Cetak Disposisi" atau "Ekspor PDF".
+* Poles tampilan (UI) agar lebih modern.
+* Presentasi di depan guru.
+
+---
+
+## 4. Gambaran Tabel Database Utama
+
+Berikut adalah panduan untuk **Anggota 3** dalam membuat tabel di MySQL:
+
+| Nama Tabel | Fungsi |
+| --- | --- |
+| **`users`** | Menyimpan username dan password admin. |
+| **`ref_kategori`** | Menyimpan kode (Contoh: `UND` untuk Undangan, `ST` untuk Surat Tugas). |
+| **`surat_keluar`** | Menyimpan no_urut, no_lengkap, tujuan, perihal, tgl_kirim, dan file. |
+| **`surat_masuk`** | Menyimpan pengirim, no_surat_asal, perihal, tgl_terima, dan file. |
+
