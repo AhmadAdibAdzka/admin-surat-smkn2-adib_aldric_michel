@@ -8,6 +8,8 @@ Agar kode tidak berantakan, gunakan urutan kerja ini setiap kali ingin mulai cod
 
 * **PAGI (Sebelum mulai):** Tarik kode terbaru dari temanmu agar kodemu selalu *update*.
 ```bash
+[git add .]
+[git commit -m "(komentar bebas atau deskripsi singkat tugas yang dikerjakan)"]
 [git pull origin main]
 
 ```
@@ -18,6 +20,7 @@ Agar kode tidak berantakan, gunakan urutan kerja ini setiap kali ingin mulai cod
 ```bash
 [git add .]
 [git commit -m "contoh komentar laporan: Selesai membuat form surat masuk"]
+[git pull origin main]
 [git push origin main]
 
 ```
