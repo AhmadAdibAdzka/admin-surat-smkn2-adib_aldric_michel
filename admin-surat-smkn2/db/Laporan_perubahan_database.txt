@@ -1,0 +1,10 @@
+perubahan database:
+
+Tabel		|	Nama Kolom Lama (awal)	|	Nama Kolom Baru (SQL Teanmu)		|
+----------------|-------------------------------|-----------------------------------------------|
+ref_kategori,	|	kode_kategori,		|	kode					|
+ref_kategori,	|	nama_kategori,		|	nama					|
+surat_keluar,	|	no_surat_lengkap,	|	no_lengkap				|
+surat_keluar,	|	tgl_surat,		|	tgl_kirim				|
+surat_masuk,	|	tgl_surat,		|	"(Dihapus, gunakan tgl_terima)"		|
+surat_masuk,	|	file,			|	files					|
