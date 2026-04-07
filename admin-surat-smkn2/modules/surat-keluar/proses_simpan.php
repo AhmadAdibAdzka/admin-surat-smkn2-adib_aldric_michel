@@ -13,22 +13,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $no_urut    = $penomoran['no_urut'];
     $no_lengkap = $penomoran['no_lengkap'];
 
-    // proses upload files
-    $nama_files = "";
-    if($_FILES['files']['name'] != ""){
-        $nama_files = time()."_".$_FILES['files']['name'];
-        move_uploaded_files($_FILES['files']['tmp_name'], "../../uploads/".$nama_files);
+    // proses upload file (Disesuaikan dari 'files' ke 'file' agar sesuai dengan tambah.php)
+    $nama_file = "";
+    if($_FILES['file']['name'] != ""){
+        $nama_file = time()."_".$_FILES['file']['name'];
+        // Gunakan move_uploaded_file (Tanpa s)
+        move_uploaded_file($_FILES['file']['tmp_name'], "../../uploads/surat-keluar/".$nama_file);
     }
 
-    // QUERY SIMPAN DATA    
-    $query = "INSERT INTO surat_keluar (no_urut, no_lengkap, id_kategori, tujuan, perihal, tgl_kirim, files)
-        VALUES ('$no_urut','$no_lengkap','$id_kategori','$tujuan','$perihal','$tgl_kirim','$nama_files')";
+    // QUERY SIMPAN DATA (Nama kolom disesuaikan dengan database: 'file')
+    $query = "INSERT INTO surat_keluar (no_urut, no_lengkap, id_kategori, tujuan, perihal, tgl_kirim, file)
+        VALUES ('$no_urut','$no_lengkap','$id_kategori','$tujuan','$perihal','$tgl_kirim','$nama_file')";
     
-    if(mysqli_query($conn,$query)){
+    if(mysqli_query($conn, $query)){
         header("Location: index.php?status=sukses");
     } else {
-        echo "Error".mysqli_error($conn);
+        echo "Error: ".mysqli_error($conn);
     }
 }
-
 ?>
