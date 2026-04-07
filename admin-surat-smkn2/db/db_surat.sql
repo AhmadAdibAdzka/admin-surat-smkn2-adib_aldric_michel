@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Feb 2026 pada 08.29
+-- Waktu pembuatan: 07 Apr 2026 pada 06.32
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -57,7 +57,7 @@ CREATE TABLE `surat_keluar` (
   `tujuan` varchar(100) DEFAULT NULL,
   `perihal` varchar(150) DEFAULT NULL,
   `tgl_kirim` date DEFAULT NULL,
-  `files` varchar(100) DEFAULT NULL
+  `file` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -72,7 +72,7 @@ CREATE TABLE `surat_masuk` (
   `no_surat_asal` varchar(100) DEFAULT NULL,
   `perihal` varchar(150) DEFAULT NULL,
   `tgl_terima` date DEFAULT NULL,
-  `files` varchar(100) DEFAULT NULL
+  `file` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -94,7 +94,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `nama_lengkap`, `role`) VALUES
-(1, 'admin', '$2y$10$8uN6vO6SgYg9X9yF6p.S7.vXvG1vG1vG1vG1vG1vG1vG1vG1vG1vG', '0', '0');
+(2, 'admin', '$2y$10$RJwNTwTqrj0R49AZSuYmwe8RGv0lprEWSCX6HeEwkcQbaprKiXx96', 'admin123', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -138,19 +138,19 @@ ALTER TABLE `ref_kategori`
 -- AUTO_INCREMENT untuk tabel `surat_keluar`
 --
 ALTER TABLE `surat_keluar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `surat_masuk`
 --
 ALTER TABLE `surat_masuk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
