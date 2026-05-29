@@ -30,14 +30,12 @@ include '../../includes/header.php';
                         <th>No. Surat Asal</th>
                         <th>Pengirim</th>
                         <th>Perihal</th>
-                        <th>Tgl Terima</th>
-                        <th>Arsip</th>
-                        <th class="text-center">Aksi</th>
+                        <th>Tgl Terima</th> <th>Arsip</th>      <th class="text-center">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    // Pastikan variabel koneksi adalah $conn sesuai koreksi terakhirmu
+                    // Menggunakan koneksi $conn untuk mengambil data terbaru di baris paling atas
                     $sql = "SELECT * FROM surat_masuk ORDER BY id DESC";
                     $result = mysqli_query($conn, $sql);
 
@@ -48,14 +46,19 @@ include '../../includes/header.php';
                                 <td><?= $row['no_surat_asal']; ?></td>
                                 <td><?= $row['pengirim']; ?></td>
                                 <td><?= $row['perihal']; ?></td>
-                                <td><?= date('d-m-Y', strtotime($row['tgl_terima'])); ?></td>
+                                
+                                <td><i class="bi bi-calendar3 me-1"></i> <?= date('d-m-Y', strtotime($row['tgl_terima'])); ?></td>
+                                
                                 <td>
                                     <?php if ($row['file'] != ""): ?>
-                                        <a href="<?= $base_url; ?>uploads/surat-masuk/<?= $row['file']; ?>" target="_blank" class="btn btn-sm btn-outline-secondary">Lihat File</a>
+                                        <a href="<?= $base_url; ?>uploads/surat-masuk/<?= $row['file']; ?>" target="_blank" class="btn btn-sm btn-outline-secondary">
+                                            <i class="bi bi-file-earmark-pdf"></i> Lihat File
+                                        </a>
                                     <?php else: ?>
-                                        <span class="text-muted">Tidak ada file</span>
+                                        <span class="text-muted small"><i class="bi bi-x-circle"></i> Tidak ada file</span>
                                     <?php endif; ?>
                                 </td>
+                                
                                 <td class="text-center">
                                     <div class="btn-group">
                                         <a href="edit.php?id=<?= $row['id']; ?>" class="btn btn-sm btn-warning">Edit</a>
@@ -66,7 +69,7 @@ include '../../includes/header.php';
                             <?php
                         }
                     } else {
-                        echo "<tr><td colspan='6' class='text-center py-4'>Belum ada data surat masuk.</td></tr>";
+                        echo "<tr><td colspan='6' class='text-center py-4 text-muted'>Belum ada data surat masuk.</td></tr>";
                     }
                     ?>
                 </tbody>

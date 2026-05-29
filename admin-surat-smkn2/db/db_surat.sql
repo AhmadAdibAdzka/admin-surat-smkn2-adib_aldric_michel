@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Apr 2026 pada 06.32
+-- Waktu pembuatan: 05 Bulan Mei 2026 pada 06.51
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -60,6 +60,13 @@ CREATE TABLE `surat_keluar` (
   `file` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `surat_keluar`
+--
+
+INSERT INTO `surat_keluar` (`id`, `no_urut`, `no_lengkap`, `id_kategori`, `tujuan`, `perihal`, `tgl_kirim`, `file`) VALUES
+(2, 1, '001//SMKN2-PDG/IV/2026', 1, 'Kepala Dinas Pendidikan', 'Pembagian Dana BOS', '2026-04-16', '');
+
 -- --------------------------------------------------------
 
 --
@@ -74,6 +81,13 @@ CREATE TABLE `surat_masuk` (
   `tgl_terima` date DEFAULT NULL,
   `file` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `surat_masuk`
+--
+
+INSERT INTO `surat_masuk` (`id`, `pengirim`, `no_surat_asal`, `perihal`, `tgl_terima`, `file`) VALUES
+(2, 'Dinas Pendidikan Kota Padang', '421/123/DISDIK-2026', 'Pemberitahuan Kunjungan Inspeksi Fasilitas Ajar Mengajar', '2026-04-16', '');
 
 -- --------------------------------------------------------
 
@@ -138,13 +152,13 @@ ALTER TABLE `ref_kategori`
 -- AUTO_INCREMENT untuk tabel `surat_keluar`
 --
 ALTER TABLE `surat_keluar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `surat_masuk`
 --
 ALTER TABLE `surat_masuk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`

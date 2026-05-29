@@ -6,19 +6,13 @@ include '../../includes/header.php';
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Daftar Surat Keluar</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
-        <a href="tambah.php" class="btn btn-primary shadow-sm">
-             Tambah Surat Baru
-        </a>
+        <a href="tambah.php" class="btn btn-primary shadow-sm">Tambah Surat Baru</a>
     </div>
 </div>
 
 <?php if (isset($_GET['status'])): ?>
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <?php 
-            if($_GET['status'] == 'sukses') echo "Data surat berhasil disimpan!";
-            if($_GET['status'] == 'update_sukses') echo "Data surat berhasil diperbarui!";
-            if($_GET['status'] == 'hapus_sukses') echo "Data surat berhasil dihapus!";
-        ?>
+        Data surat berhasil diproses dan diarsipkan otomatis ke server!
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <?php endif; ?>
@@ -40,11 +34,8 @@ include '../../includes/header.php';
                 </thead>
                 <tbody>
                     <?php
-                    $sql = "SELECT sk.*, rk.nama as nama_kategori 
-                            FROM surat_keluar sk 
-                            JOIN ref_kategori rk ON sk.id_kategori = rk.id 
-                            ORDER BY sk.id DESC";
-                    
+                    $sql = "SELECT sk.*, rk.nama as nama_kategori FROM surat_keluar sk 
+                            JOIN ref_kategori rk ON sk.id_kategori = rk.id ORDER BY sk.id DESC";
                     $result = mysqli_query($conn, $sql);
 
                     if (mysqli_num_rows($result) > 0) {
@@ -55,11 +46,11 @@ include '../../includes/header.php';
                                 <td><span class="badge bg-info text-dark"><?= $row['nama_kategori']; ?></span></td>
                                 <td><?= $row['tujuan']; ?></td>
                                 <td><?= $row['perihal']; ?></td>
-                                <td><?= date('d-m-Y', strtotime($row['tgl_kirim'])); ?></td>
+                                <td><i class="bi bi-calendar3 me-1"></i> <?= date('d-m-Y', strtotime($row['tgl_kirim'])); ?></td>
                                 <td>
                                     <?php if ($row['file'] != ""): ?>
-                                        <a href="<?= $base_url; ?>uploads/surat-keluar/<?= $row['file']; ?>" target="_blank" class="btn btn-sm btn-outline-secondary">
-                                            Lihat File
+                                        <a href="<?= $base_url; ?>uploads/surat-keluar/<?= $row['file']; ?>" target="_blank" class="btn btn-sm btn-outline-danger">
+                                            <i class="bi bi-file-pdf"></i> Lihat File
                                         </a>
                                     <?php else: ?>
                                         <span class="text-muted small">Tidak ada file</span>
@@ -67,6 +58,7 @@ include '../../includes/header.php';
                                 </td>
                                 <td class="text-center">
                                     <div class="btn-group">
+                                        <a href="cetak.php?id=<?= $row['id']; ?>" target="_blank" class="btn btn-sm btn-success"><i class="bi bi-printer"></i> Cetak</a>
                                         <a href="edit.php?id=<?= $row['id']; ?>" class="btn btn-sm btn-warning">Edit</a>
                                         <a href="hapus.php?id=<?= $row['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
                                     </div>

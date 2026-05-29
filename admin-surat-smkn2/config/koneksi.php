@@ -12,5 +12,5 @@ if (!$conn) {
     die("Koneksi database gagal: " . mysqli_connect_error());
 }
 
-$base_url = "http://localhost/admin-surat-smkn2/project-mandiri/admin-surat-smkn2/";
+$base_url = "http://localhost/admin-surat-smkn2/admin-surat-smkn2-adib_aldric_michel/admin-surat-smkn2/";
 ?>
